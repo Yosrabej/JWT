@@ -1,0 +1,22 @@
+{% block body %}
+<input type="hidden" id="url-users-list" value="{{path('users_registered')}}">
+<table  id="users">
+<thead>
+<tr>
+<th>username</th>
+<th>email</th>
+</tr>
+</thead>
+<tbody>
+
+ {% for a in users %}
+ <tr>
+<td>{{a.username}}</td>
+<td>{{a.email}}</td>
+</tr>
+{% endfor %}
+
+</tbody>
+</table>
+
+{% endblock %}

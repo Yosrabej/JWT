@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h3 class='ph'>historique des demandes</h3>
+{% for a in conge %}
+<br/>
+ Nombre de jours{{a.nbJours}} 
+ <br/>
+ Date {{a.dateDebut |date("m/d/Y") }}
+ <br/>
+Statut {{a.statut}}
+<br/>
+
+<a href="{{ path('valider',{'id': a.id }) }}">valider</a>
+<a href="{{ path('refuser',{'id': a.id }) }}">refuser</a>
+{% endfor %}
+
+{% endblock %}

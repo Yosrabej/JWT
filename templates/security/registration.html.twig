@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block javascripts %}
+{{ encore_entry_script_tags('users')}}
+{% endblock %}
+{% block body %}
+
+
+  
+Inscription
+<form>
+<input type="text" id="username" />
+<input type="text" id="email" />
+<input type="password" id="password" />
+<input type="password" id="confirm-password" />
+
+</form>
+{{form_start(form)}}
+{{form_row(form.username, {'label': 'Nom d\'utilisateur', 'attr':{'placeholder': 'votre nom..', 'id':'username'}})}}
+{{form_row(form.email, {'label': 'Email', 'attr':{'placeholder': 'votre email..', 'id':'email'}})}}
+{{form_row(form.password, {'attr':{ 'id':'password'}})}}
+{{form_row(form.confirm_password)}}
+{{form_row(form.roles)}}
+<input id='user'></input>
+<a><button type='submit' class='btn btn-success' id="show">Inscription</button></a>
+{{form_end(form)}}
+<button >Show users</button>
+<div id="input"></div>
+<table  id="users"></table>
+
+{% endblock %}
